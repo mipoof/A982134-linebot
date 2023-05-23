@@ -24,11 +24,13 @@ public class LineBotApp : WebhookApplication
                 var channelId = ev.Source.Id;
                 //使用者Id
                 var userId = ev.Source.UserId;
+
+                var text = ((TextEventMessage)ev.Message).Text;
                     
                 //回傳 hellow
                 result = new List<ISendMessage>
                 {
-                    new TextMessage("你渴望力量嗎?")
+                    new TextMessage("你渴望力量嗎?" + text),
                 };
             }
                 break;
