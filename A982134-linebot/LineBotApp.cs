@@ -26,11 +26,28 @@ public class LineBotApp : WebhookApplication
                 var userId = ev.Source.UserId;
 
                 var text = ((TextEventMessage)ev.Message).Text;
-                    
+                
+                var outputText = text;
+                
+                if (text.Contains("pocky"))
+                {
+                    outputText = "嗨!阿PO";
+                }
+                
+                if (text.Contains("小羊"))
+                {
+                    outputText = "嗨!小羊";
+                }
+                
+                if (text.Contains("嗨寶包"))
+                {
+                    outputText = "嗨!寶包";
+                }
+                
                 //回傳 hellow
                 result = new List<ISendMessage>
                 {
-                    new TextMessage("你渴望力量嗎?" + text),
+                    new TextMessage(outputText),
                 };
             }
                 break;
