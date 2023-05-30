@@ -9,6 +9,10 @@ public class LineBotApp : WebhookApplication
     private readonly LineMessagingClient _messagingClient;
 
     private static Dictionary<string, string> _pool = new Dictionary<string, string>();
+    static LineBotApp()
+    {
+        _pool.Add("","");
+    }
     public LineBotApp(LineMessagingClient lineMessagingClient)
     {
         _messagingClient = lineMessagingClient;
