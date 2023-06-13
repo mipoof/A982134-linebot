@@ -33,7 +33,9 @@ public class LineBotApp : WebhookApplication
                 var userId = ev.Source.UserId;
                 //使用者輸入的文字
                 var text = ((TextEventMessage)ev.Message).Text;
-
+                
+                /*
+                //機器人不會回覆 喵
                 if (PoolHasMsg(text))
                 {
                     // 從記憶體池查詢資料
@@ -51,8 +53,8 @@ public class LineBotApp : WebhookApplication
                         TeachDog(text);
                     }
                 }
-
-                /*
+                */
+                
                 var outputText = text;
                 
                 if (text.Contains("pocky"))
@@ -75,7 +77,6 @@ public class LineBotApp : WebhookApplication
                 {
                     new TextMessage(outputText),
                 };
-                */
             }
                 break;
         }
@@ -84,6 +85,7 @@ public class LineBotApp : WebhookApplication
             await _messagingClient.ReplyMessageAsync(ev.ReplyToken, result);
     }
     
+    /*
     /// <summary>
     /// 確認是否已經學習過這個對話
     /// </summary>
@@ -91,7 +93,7 @@ public class LineBotApp : WebhookApplication
     /// <returns></returns>
     private bool PoolHasMsg(string inputMsg)
     {
-        return false;
+        return _pool.ContainsKey(inputMsg);
     }
 
     /// <summary>
@@ -147,4 +149,5 @@ public class LineBotApp : WebhookApplication
             throw;
         }
     }
+    */
 }
