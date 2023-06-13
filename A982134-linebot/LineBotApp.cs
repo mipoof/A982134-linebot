@@ -57,19 +57,29 @@ public class LineBotApp : WebhookApplication
                 
                 var outputText = text;
                 
-                if (text.Contains("pocky"))
+                if (text.Contains("向日葵"))
                 {
-                    outputText = "嗨!阿PO";
+                    outputText = "崇拜、敬慕、凝視你";
                 }
                 
-                if (text.Contains("小羊"))
+                if (text.Contains("玫瑰"))
                 {
-                    outputText = "嗨!小羊";
+                    outputText = "熱情、熱烈的戀情";
                 }
                 
-                if (text.Contains("嗨寶包"))
+                if (text.Contains("鬱金香"))
                 {
-                    outputText = "嗨!寶包";
+                    outputText = "博愛、名聲、戀情告白、失戀、單戀、無望的愛、體貼";
+                }
+                
+                if (text.Contains("繡球花"))
+                {
+                    outputText = "性情不定、見異思遷、冷酷、變節";
+                }
+                
+                if (text.Contains("櫻花"))
+                {
+                    outputText = "純潔、清淡、內在美、出色的美人";
                 }
 
                 //回傳 hellow
